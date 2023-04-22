@@ -13,6 +13,7 @@ config_version=5
 config/name="Overgrown Subway"
 run/main_scene="res://subway/subway.tscn"
 config/features=PackedStringArray("4.0", "Forward Plus")
+run/max_fps=60
 config/icon="res://project_icon.png"
 
 [autoload]
@@ -21,10 +22,14 @@ ControlSettings="*res://ControlSettings.gd"
 
 [display]
 
-window/size/viewport_width=1280
-window/size/viewport_height=720
+window/size/viewport_width=2560
+window/size/viewport_height=1440
 window/stretch/mode="viewport"
 window/stretch/aspect="ignore"
+
+[dotnet]
+
+project/assembly_name="Overgrown Subway"
 
 [editor_plugins]
 
@@ -151,7 +156,9 @@ pause={
 
 [rendering]
 
+lights_and_shadows/use_physical_light_units=true
 lights_and_shadows/directional_shadow/soft_shadow_filter_quality=5
-anti_aliasing/quality/msaa_3d=1
+global_illumination/sdfgi/probe_ray_count=2
+global_illumination/sdfgi/frames_to_update_lights=1
 anti_aliasing/quality/screen_space_aa=1
 occlusion_culling/use_occlusion_culling=true
